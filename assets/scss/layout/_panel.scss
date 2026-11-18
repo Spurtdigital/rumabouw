@@ -36,25 +36,6 @@
             }
         }
     }
-    &__footer{
-        content:'';
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: darken($secondary, 15%);
-        height: 45px;
-        line-height: 45px;
-        text-align: center;
-        color:white;
-        transition: all .3s ease;
-        text-decoration: none;
-        &:hover{
-            color:white;
-            text-decoration: none;
-            background-color: darken($secondary, 20%);
-        }
-    }
 }
 
 html {

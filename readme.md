@@ -53,9 +53,9 @@ dist/
 │   │   ├── app.scss            # SCSS entry point
 │   │   ├── base/               # reset, type, fonts
 │   │   ├── components/         # block, buttons
-│   │   ├── layout/             # header, navigation, footer, panel, builder, form
-│   │   ├── pages/              # page-specifieke styles (home)
-│   │   ├── utils/              # variables, client-variables, mixins, functions
+│   │   ├── layout/             # header, navigation, footer, panel, form
+│   │   ├── pages/              # page-specifieke styles (home, contact, builder)
+│   │   ├── utils/              # variables (incl. klantwaarden), mixins, functions
 │   │   └── vendors/            # bootstrap imports
 │   ├── fontawesome/            # Font Awesome 7 Pro
 │   └── images/
@@ -70,7 +70,7 @@ dist/
 ├── template-parts/
 │   ├── blocks/
 │   ├── components/
-│   └── layout/
+│   └── layouts/
 ├── functions.php
 ├── header.php
 ├── footer.php
@@ -81,13 +81,11 @@ dist/
 
 ## Design tokens
 
-De klant-specifieke waarden staan in `assets/scss/utils/_client-variables.scss` en worden
-vóór Bootstrap geladen:
+De klant-specifieke waarden staan in `assets/scss/utils/_variables.scss` (Spurt-basis):
 
-- `$primary: #1F2122`
-- `$spacer: .625rem` (10px grid, `.m-{0-10}` en `.p-{0-10}`)
-- `$font-size-base: 1.2rem`, `$line-height-base: 1.9`
-- Extra breakpoint `xxxl: 1500px`, container `xxxl: 1420px`
+- Kleuren: `$primary: #2E2C26`, `$gray-100: #F4F3EE`
+- Typografie: Geist Variable (zelf-gehost via `@fontsource-variable/geist`), `$font-size-base: 1rem` (16px), `$lead-font-size: 17px`, eigen `$h1`-`$h6` en display-sizes
+- Spacers, breakpoints, containers, line-height en border-radius komen uit de Spurt-basis (`_variables.scss`): 8px-grid, `.m-{0-30}` / `.p-{0-30}`, breakpoints t/m `xxl` (1400px)
 
 ## Spurt plugin (Creators General)
 

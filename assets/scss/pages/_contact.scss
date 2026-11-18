@@ -1,0 +1,20 @@
+.block-contact {
+    background-color: $primary;
+    padding: 30px;
+    color: $white;
+
+    &__menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        color: $white;
+
+        li {
+            line-height: 35px;
+
+            a {
+                color: $white;
+            }
+        }
+    }
+}

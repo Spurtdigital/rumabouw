@@ -23,10 +23,7 @@
         bottom: -10px;
         background-color: $primary;
         content:'';
-        width: calc(100% - ((100% - #{map_get($container-max-widths, 'xxxl')}) / 2) - #{$grid-gutter-width});
-        @include media-breakpoint-down(xxl){
-            width: calc(100% - ((100% - #{map_get($container-max-widths, 'xxl')}) / 2) - #{$grid-gutter-width});
-        }
+        width: calc(100% - ((100% - #{map_get($container-max-widths, 'xxl')}) / 2) - #{$grid-gutter-width});
         @include media-breakpoint-down(xl){
             width: calc(100% - ((100% - #{map_get($container-max-widths, 'xl')}) / 2) - #{$grid-gutter-width});   
              }

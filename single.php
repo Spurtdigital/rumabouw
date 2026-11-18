@@ -1,5 +1,5 @@
 <?php get_header();?>
-<section class="breadcumb py-4">
+<section class="page-header py-4">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -13,6 +13,6 @@
     </div>
 </section>
 
-<?php get_template_part( 'template-parts/layout/builder' ); ?>
+<?php get_template_part( 'template-parts/layouts/layout-builder' ); ?>
 
 <?php get_footer();?>

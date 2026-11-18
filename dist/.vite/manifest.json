@@ -12,7 +12,32 @@
       "css/app.css"
     ],
     "assets": [
+      "fonts/geist-cyrillic-ext-wght-normal.woff2",
+      "fonts/geist-cyrillic-wght-normal.woff2",
+      "fonts/geist-vietnamese-wght-normal.woff2",
+      "fonts/geist-latin-ext-wght-normal.woff2",
+      "fonts/geist-latin-wght-normal.woff2",
       "images/rumabouw.svg"
     ]
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-cyrillic-ext-wght-normal.woff2": {
+    "file": "fonts/geist-cyrillic-ext-wght-normal.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-cyrillic-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2": {
+    "file": "fonts/geist-cyrillic-wght-normal.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2": {
+    "file": "fonts/geist-latin-ext-wght-normal.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2": {
+    "file": "fonts/geist-latin-wght-normal.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2": {
+    "file": "fonts/geist-vietnamese-wght-normal.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2"
   }
 }

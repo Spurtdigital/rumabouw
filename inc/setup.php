@@ -7,13 +7,52 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'html5', [ 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ] );
 	register_nav_menus([
-		'topmenu'   => __( 'topmenu', 'creators' ),
-		'hoofdmenu'   => __( 'Hoofdmenu', 'creators' ),
-		'footermenu'  => __( 'Footer menu', 'creators' ),
-		'footermenu2'  => __( 'Footer menu 2', 'creators' ),
-		'privacymenu' => __( 'Privacy menu', 'creators' ),
+		'top'      => __( 'Topmenu', 'creators' ),
+		'main'     => __( 'Hoofdmenu', 'creators' ),
+		'footer'   => __( 'Footer menu', 'creators' ),
+		'footer_2' => __( 'Footer menu 2', 'creators' ),
+		'privacy'  => __( 'Privacy menu', 'creators' ),
 	]);
 } );
+
+/**
+ * Migreer de oude Nederlandse menu-locaties naar de Engelse slugs.
+ * Bestaande menu-koppelingen blijven behouden.
+ */
+add_action( 'after_setup_theme', function() {
+	$locations = get_theme_mod( 'nav_menu_locations' );
+
+	if ( ! is_array( $locations ) ) {
+		return;
+	}
+
+	$map = [
+		'topmenu'     => 'top',
+		'hoofdmenu'   => 'main',
+		'footermenu'  => 'footer',
+		'footermenu2' => 'footer_2',
+		'privacymenu' => 'privacy',
+	];
+
+	$changed = false;
+
+	foreach ( $map as $legacy => $new ) {
+		if ( ! isset( $locations[ $legacy ] ) ) {
+			continue;
+		}
+
+		if ( empty( $locations[ $new ] ) ) {
+			$locations[ $new ] = $locations[ $legacy ];
+		}
+
+		unset( $locations[ $legacy ] );
+		$changed = true;
+	}
+
+	if ( $changed ) {
+		set_theme_mod( 'nav_menu_locations', $locations );
+	}
+}, 20 );
 
 add_action( 'after_setup_theme', function() {
 	$GLOBALS['content_width'] = apply_filters( 'creators_content_width', 640 );

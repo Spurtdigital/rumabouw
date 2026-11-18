@@ -106,6 +106,8 @@
     @include font-size(15);
     color: $primary;
     background-color: $primary;
+    border: 0;
+    cursor: pointer;
     height: 90px; 
     padding: 0 35px;
     display: none;

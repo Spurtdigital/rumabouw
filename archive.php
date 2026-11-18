@@ -1,28 +1,25 @@
-<?php /*Template Name: Archive - Nieuws */ get_header(); ?>
+<?php /* Template Name: Archive - Nieuws */ get_header(); ?>
 
-<?php get_template_part( 'template-parts/layout/archive-header' ); ?>
-
-
+<?php get_template_part( 'template-parts/layouts/layout-archive-header' ); ?>
 
 <section>
     <div class="container mb-6">
         <div class="row">
-        <?php $loop = new WP_Query( array(
-                'post_type' => 'post',
+            <?php $posts_query = new WP_Query( [
+                'post_type'      => 'post',
                 'posts_per_page' => -1,
-                'post_status' => 'publish',
-				'orderby' => 'menu_order'
-            ));?>
+                'post_status'    => 'publish',
+                'orderby'        => 'menu_order',
+            ] ); ?>
 
-            <?php $projectcount = 0; while ( $loop->have_posts() ) : $loop->the_post(); $projectcount++; ?>
-            <div class="<?php if($projectcount == 3){?>col-lg-12 b-block<?php } else { ?>col-lg-6 <?php }?> mt-3">
-                <?php get_template_part( 'template-parts/blocks/block','project' ); ?>
-            </div>
-
-            <?php endwhile; wp_reset_query(); ?>
+            <?php $project_count = 0; while ( $posts_query->have_posts() ) : $posts_query->the_post(); $project_count++; ?>
+                <?php $item_class = ( $project_count === 3 ) ? 'block-project-wide col-lg-12 mt-3' : 'col-lg-6 mt-3'; ?>
+                <div class="<?php echo esc_attr( $item_class ); ?>">
+                    <?php get_template_part( 'template-parts/blocks/block', 'project' ); ?>
+                </div>
+            <?php endwhile; wp_reset_postdata(); ?>
         </div>
     </div>
 </section>
-
 
 <?php get_footer(); ?>

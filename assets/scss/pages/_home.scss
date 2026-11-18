@@ -20,10 +20,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        @include calc-container-placement(xxxl, 'true');
-        @include media-breakpoint-down(xxxl){
-            @include calc-container-placement(xxl, 'true');
-        }
+        @include calc-container-placement(xxl, 'true');
         @include media-breakpoint-down(xxl){
             @include calc-container-placement(xl, 'true');
         }
@@ -91,10 +88,7 @@
         overflow: visible;
     }
     &__slide{
-        @include calc-gridsize(xxxl, 2);
-        @include media-breakpoint-down(xxxl){
-            @include calc-gridsize(xxl, 2);
-        }
+        @include calc-gridsize(xxl, 2);
         @include media-breakpoint-down(xxl){
             @include calc-gridsize(xl, 2);
         }
@@ -177,10 +171,7 @@
         background-color: $primary;
         left:0;
         z-index: 2;
-        @include calc-container-placement(xxxl, 'true');
-        @include media-breakpoint-down(xxxl){
-            @include calc-container-placement(xxl, 'true');
-        }
+        @include calc-container-placement(xxl, 'true');
         @include media-breakpoint-down(xxl){
             @include calc-container-placement(xl, 'true');
         }

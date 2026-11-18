@@ -1,3 +1,13 @@
+.builder-row {
+    & + & {
+        margin-top: $spacer * 5;
+    }
+
+    &:last-child {
+        margin-bottom: $spacer * 5;
+    }
+}
+
 .builder{
     &-media{
         position: relative;
@@ -214,28 +224,18 @@
             padding: 20px 20px;
             background-color: $gray-100;
             &.is-active {
-                .faq-item {
-                    &__toggler {
-                        &:after {
-                            transform: translate(-50%, -50%) rotate(180deg);
-                        }
+                .builder-faq-item__toggler {
+                    &:after {
+                        transform: translate(-50%, -50%) rotate(180deg);
                     }
                 }
             }
             &__header {
-                font-weight: bold;
                 position: relative;
             }
             &__title {
                 @include font-size(18);
                 display: block;
-            }
-            &__subtitle {
-                @include font-size(18);
-                color: $primary;
-                display: block;
-                font-weight: 700;
-                margin: 0 0 10px;
             }
             &__toggler {
                 top: 0px;

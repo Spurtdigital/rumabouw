@@ -2,7 +2,7 @@
 
 <section>
 	<div class="container">
-		<h1><?php echo sprintf(__('Zoekresultaten voor: %s', 'creators'), get_search_query()); ?></h1>
+		<h1 class="display-2"><?php echo sprintf(__('Zoekresultaten voor: %s', 'creators'), get_search_query()); ?></h1>
 		<?php if(have_posts()): ?>
 			<div class="row">
 				<?php while(have_posts()): the_post(); ?>

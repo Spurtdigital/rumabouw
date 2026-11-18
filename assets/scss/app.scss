@@ -1,8 +1,6 @@
 // --- UTILS
 @import "bootstrap/scss/functions";
-@import "utils/client-variables";
 @import "utils/variables";
-@import "utils/variables-dark";
 @import "utils/functions";
 @import "utils/mixins";
 
@@ -16,16 +14,18 @@
 @import "base/fonts";
 
 // --- COMPONENTS
-@import "components/block";
+@import "components/blocks";
 @import "components/buttons";
 
 // --- LAYOUT
-@import "layout/headers";
+@import "layout/header";
 @import "layout/navigation";
 @import "layout/footer";
 @import "layout/panel";
-@import "layout/builder";
 @import "layout/form";
 
 // --- PAGES
 @import "pages/home";
+@import "pages/news";
+@import "pages/contact";
+@import "pages/builder";
