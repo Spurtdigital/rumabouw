@@ -8,7 +8,7 @@
     &__logo{
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url(../images/rumabouw.svg);
+        background-image: url(../../images/rumabouw.svg);
         width: 200px;
         height: 85px;
         content:'';
@@ -90,7 +90,7 @@
                     }
                 }
             }
-            span{
+            span:not(.screen-reader-text){
                 display: none;
             }
         }

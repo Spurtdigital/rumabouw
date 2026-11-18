@@ -13,12 +13,12 @@
     </div>
     <?php if ( get_field( 'hero_video' ) ) : ?>
     <div class="home-hero__image home-hero__image--video">
-        <video autoplay muted loop playsinline poster="<?php echo spurtImage(get_field( 'hero_afbeelding' )['url'],1920,600);?>">
+        <video autoplay muted loop playsinline poster="<?php echo spurt_image(get_field( 'hero_afbeelding' )['url'],1920,600);?>">
             <source src="<?php echo esc_url( get_field( 'hero_video' ) );?>" type="video/mp4">
         </video>
     </div>
     <?php else : ?>
-    <div class="home-hero__image" style="background-image:url('<?php echo spurtImage(get_field( 'hero_afbeelding' )['url'],1920,600);?>')">
+    <div class="home-hero__image" style="background-image:url('<?php echo spurt_image(get_field( 'hero_afbeelding' )['url'],1920,600);?>')">
     </div>
     <?php endif; ?>
 </section>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-lg-6 order-first order-lg-last">
                 <div class="home-about__media">
-                    <div class="home-about__image" style="background-image:url('<?php echo spurtImage(get_field( 'intro_afbeelding' )['url'],1920,600);?>')"></div>
+                    <div class="home-about__image" style="background-image:url('<?php echo spurt_image(get_field( 'intro_afbeelding' )['url'],1920,600);?>')"></div>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="col-lg-6 offset-lg-1">
                 <div class="home-service__media">
-                    <div class="home-service__image"style="background-image:url('<?php echo spurtImage(get_field( 'diensten_afbeelding' )['url'],1920,600);?>')"></div>
+                    <div class="home-service__image"style="background-image:url('<?php echo spurt_image(get_field( 'diensten_afbeelding' )['url'],1920,600);?>')"></div>
                 </div>
             </div>
         </div>
@@ -73,18 +73,20 @@
             </div>
             <div class="col-lg-12">
                 <div class="project-slider">
-                    <div class="js-project-slider">
+                    <div class="swiper js-project-slider">
+                    <div class="swiper-wrapper">
                     <?php $loop = new WP_Query( array(
                         'post_type' => 'project',
                         'posts_per_page' => -1
                     ) );?>
 
                     <?php $projectcount = 0; while ( $loop->have_posts() ) : $loop->the_post(); $projectcount++; ?>
-                    <div class="project-slider__slide">
+                    <div class="swiper-slide project-slider__slide">
                         <?php get_template_part( 'template-parts/blocks/block','project' ); ?>
                     </div>
 
                     <?php endwhile; wp_reset_query(); ?>
+                    </div>
                     </div>
                 </div>
             </div>

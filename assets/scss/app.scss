@@ -1,15 +1,19 @@
 // --- UTILS
-@import "~bootstrap/scss/functions";
-@import "utils/functions";
+@import "bootstrap/scss/functions";
+@import "utils/client-variables";
 @import "utils/variables";
+@import "utils/variables-dark";
+@import "utils/functions";
 @import "utils/mixins";
 
-// --- BOOTSTRAP
+// --- VENDORS
+@import "@fancyapps/ui/dist/fancybox/fancybox.css";
 @import "vendors/bootstrap";
 
 // --- BASE
 @import "base/reset";
 @import "base/type";
+@import "base/fonts";
 
 // --- COMPONENTS
 @import "components/block";
@@ -22,9 +26,6 @@
 @import "layout/panel";
 @import "layout/builder";
 @import "layout/form";
+
 // --- PAGES
 @import "pages/home";
-
-// --- EXTRA
-@import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
-@import 'slick-carousel/slick/slick.scss';

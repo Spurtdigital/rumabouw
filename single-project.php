@@ -3,7 +3,7 @@
 
 
 
-<section class="single-header" style="background-image:url('<?php echo spurtImage($headerimg, 1920,9999)?>')">
+<section class="single-header" style="background-image:url('<?php echo spurt_image($headerimg, 1920,9999)?>')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">

@@ -1,0 +1,18 @@
+{
+  "assets/images/rumabouw.svg": {
+    "file": "images/rumabouw.svg",
+    "src": "assets/images/rumabouw.svg"
+  },
+  "assets/js/app.js": {
+    "file": "js/app.js",
+    "name": "app",
+    "src": "assets/js/app.js",
+    "isEntry": true,
+    "css": [
+      "css/app.css"
+    ],
+    "assets": [
+      "images/rumabouw.svg"
+    ]
+  }
+}

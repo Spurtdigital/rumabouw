@@ -16,12 +16,71 @@
     }
 }
 
-@mixin dot-this($lines: 3, $fsize: $font-size-base, $lheight: $line-height-base) {
+@mixin dot-this($lines: 3, $fsize: $font-size-base, $lheight: $line-height-base, $max-height: false) {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: $lines;
     overflow: hidden;
-    height: calc( #{$lines} * ( #{$fsize} * #{$lheight} ) );
+    display: -webkit-box;
+    @if $fsize != null { // RFS CALCULASEAN
+        $val: rfs-value($fsize);
+        $fluidVal: rfs-fluid-value($fsize);
+        @if $val == $fluidVal {
+            @if $max-height {
+                max-height: calc( #{$lines} * ( #{$val} * #{$lheight} ) );
+            }
+            @else {
+                height: calc( #{$lines} * ( #{$val} * #{$lheight} ) );
+            }
+        }
+        @else {
+            @include _rfs-rule {
+                @if $max-height {
+                    max-height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $val, $fluidVal)} * #{$lheight} ) );
+                }
+                @else {
+                    height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $val, $fluidVal)} * #{$lheight} ) );
+                }
+            }
+            @include _rfs-media-query-rule {
+                @if $max-height {
+                    max-height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $fluidVal, $val)} * #{$lheight} ) );
+                }
+                @else {
+                    height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $fluidVal, $val)} * #{$lheight} ) );
+                }
+            }
+        }
+    }
 }
+
+@mixin img-abs-center($fit: cover, $position: center center){
+    height: 100%;
+    left: 0;
+    object-fit: $fit;
+    object-position: $position;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+@mixin reset-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin breakpoint-custom-down($size) {
+    $max: breakpoint-custom-max($size);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+// --- Rumabouw klant-specifieke mixins
 
 @mixin calc-ms-placement($container_size, $side: false) {
     @if $side == 'left' {
@@ -38,15 +97,11 @@
         width: calc(((100vw + #{map-get($container-max-widths, #{$container_size})}) - #{$grid-gutter-width} ) / 2);
     } @else if $grid == 'false' {
         width: calc((100vw + #{map-get($container-max-widths, #{$container_size})}));
-
     } @else {
         @warn "$grid moet gelijk zijn aan left of right";
     }
 }
 
-
 @mixin calc-gridsize($container_size, $col)  {
     width: calc( ( #{map-get($container-max-widths, #{$container_size})} - 60px ) / #{$col} );
 }
-
-// width: calc( ( #{map-get($container-max-widths, 'xxxl')} - #{$grid-gutter-width} ) /2 );

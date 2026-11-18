@@ -79,15 +79,17 @@
             <div class="container mb-5 slide-container">
                 <div class="row justify-content-center">
                     <div class="col-12 mb-5">
-                        <div class="builder-slider js-builder-slider">
+                        <div class="swiper builder-slider js-builder-slider">
+                            <div class="swiper-wrapper">
                             <?php if ( have_rows('afbeeldingen') ) : while( have_rows('afbeeldingen') ) : the_row(); $buildersliderimg = get_sub_field( 'afbeelding' );?>
-                                <div class="builder-slider__slide">
+                                <div class="swiper-slide builder-slider__slide">
                                     <div class="builder-slide__media">
-                                        <img class="img-wide" src="<?php echo spurtImage($buildersliderimg['url'],900,500);?>" alt="<?php echo $buildersliderimg['alt']?>">
+                                        <img class="img-wide" src="<?php echo spurt_image($buildersliderimg['url'],900,500);?>" alt="<?php echo $buildersliderimg['alt']?>">
                                         <a href="<?php echo $buildersliderimg['url'];?>" class="stretched-link" data-fancybox="gallery"></a>
                                     </div>
                                 </div>
                             <?php endwhile;endif; ?>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-10 col-md-12">
@@ -148,7 +150,7 @@
                                 <source src="<?php echo esc_url( $splitvideo );?>" type="video/mp4">
                             </video>
                         <?php elseif ( $splitafb ) : ?>
-                            <img src="<?php echo spurtImage( $splitafb['url'], 1200, 900 );?>" alt="<?php echo $splitafb['alt'];?>">
+                            <img src="<?php echo spurt_image( $splitafb['url'], 1200, 900 );?>" alt="<?php echo $splitafb['alt'];?>">
                         <?php endif; ?>
                     </div>
                 </div>
@@ -171,7 +173,7 @@
                         <?php while ( have_rows( 'afbeeldingen' ) ) : the_row(); $gridimg = get_sub_field( 'afbeelding' ); ?>
                             <?php if ( $gridimg ) : ?>
                             <div class="builder-grid__item">
-                                <img src="<?php echo spurtImage( $gridimg['url'], 900 );?>" alt="<?php echo $gridimg['alt'];?>">
+                                <img src="<?php echo spurt_image( $gridimg['url'], 900 );?>" alt="<?php echo $gridimg['alt'];?>">
                                 <a href="<?php echo $gridimg['url'];?>" class="stretched-link" data-fancybox="gallery"></a>
                             </div>
                             <?php endif; ?>
@@ -184,7 +186,7 @@
                             <?php if ( $gridimg ) : ?>
                             <div class="<?php echo $gridcol;?>">
                                 <div class="builder-grid__item">
-                                    <img src="<?php echo spurtImage( $gridimg['url'], 900, 700 );?>" alt="<?php echo $gridimg['alt'];?>">
+                                    <img src="<?php echo spurt_image( $gridimg['url'], 900, 700 );?>" alt="<?php echo $gridimg['alt'];?>">
                                     <a href="<?php echo $gridimg['url'];?>" class="stretched-link" data-fancybox="gallery"></a>
                                 </div>
                             </div>

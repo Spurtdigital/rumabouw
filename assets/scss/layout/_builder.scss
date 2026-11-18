@@ -6,7 +6,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-image: url(../images/shape.svg);
+            background-image: url(../../images/shape.svg);
             background-size: contain;
             background-repeat: no-repeat;
             height: 50px;
@@ -34,7 +34,7 @@
                 top: 50%;
                 left: 50%;
                 content:'\f04b';
-                font-family: 'Font Awesome 5 Pro';
+                font-family: 'Font Awesome 7 Pro';
                 text-align: center;
                 color:$primary;
                 line-height: 75px;
@@ -82,7 +82,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                background-image: url(../images/shape.svg);
+                background-image: url(../../images/shape.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
                 height: 50px;
@@ -203,18 +203,8 @@
         }
     }
     &-slider{
-        &__slide{
-         
-        }
-        
-
-        .slick-slide {
-            margin: 0 15px;
-            // width: 33vw;
-        }
-        .slick-list {
-            margin: 0 -15px;
-            // overflow: visible;
+        .swiper-slide {
+            height: auto;
         }
     }
     &-faq{
@@ -283,8 +273,8 @@
 
 .slide-container{
     overflow-x:visible;
-    .slick-list{
-        overflow:visible;   
+    .swiper{
+        overflow:visible;
     }
     img{
         height: 100%;

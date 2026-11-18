@@ -15,7 +15,7 @@
 				</ul>
 				<div class="footer__social">
 					<strong class="d-block mt-1">Volg ons op:</strong>
-					<?php spurtSocial();?>
+					<?php do_action( 'spurt_social' );?>
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-12 mt-5 order-3 order-lg-3 order-xl-2">
@@ -48,13 +48,13 @@
 				<span><?php the_field( 'aangesloten_bij_tekst', 'options' );?></span>
 				<ul class="footer__bottommenu d-flex align-items-center mt-2 mt-md-0">
 					<?php if ( have_rows('logos','options') ) : while( have_rows('logos','options') ) : the_row(); $footerlogo = get_sub_field( 'logo');?>
-						<li><div class="footer__img" style="background-image:url('<?php echo spurtImage($footerlogo['url'],100,100);?>')"></div></li>
+						<li><div class="footer__img" style="background-image:url('<?php echo spurt_image($footerlogo['url'],100,100);?>')"></div></li>
 					<?php endwhile; endif; ?>
 				</ul>
 			</div>
 			<div class="col-xl-6 col-lg-12 text-start text-xl-end d-md-flex justify-content-start justify-content-xl-end mt-3 mt-xl-0 clearfix">
 				<?php creators_privacymenu(); ?>
-				<?php spurtBranding();?>
+				<?php do_action( 'spurt_branding' );?>
 			</div>
 		</div>
 	</div>

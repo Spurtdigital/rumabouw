@@ -1,3 +1,7 @@
+@function breakpoint-custom-max($size) {
+    @return if($size and $size > 0, $size - .02, null);
+}
+
 @function stripUnit($value) {
     @return $value / ($value * 0 + 1);
 }

@@ -13,7 +13,7 @@
         <?php $headerimg = get_the_post_thumbnail_url(get_the_ID(),'full'); ?>
 
         <div class="col-lg-12">
-            <img src="<?php echo spurtImage($headerimg, 1400,300)?>" alt="" class="img-wide">
+            <img src="<?php echo spurt_image($headerimg, 1400,300)?>" alt="" class="img-wide">
         </div>
     </div>
 </section>
