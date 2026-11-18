@@ -1,0 +1,251 @@
+.home-hero{
+    position: relative;
+    background-color: white;
+    padding: 400px 0 0 0;
+    overflow-x: hidden;
+    @include media-breakpoint-down(xl){
+        padding: 300px 0 0 0;
+    }
+    @include media-breakpoint-down(lg){
+        padding: 250px 0 0 0;
+    }
+    &__image{
+        content:'';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: $gray-200;
+        z-index: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include calc-container-placement(xxxl, 'true');
+        @include media-breakpoint-down(xxxl){
+            @include calc-container-placement(xxl, 'true');
+        }
+        @include media-breakpoint-down(xxl){
+            @include calc-container-placement(xl, 'true');
+        }
+        @include media-breakpoint-down(xl){
+            @include calc-container-placement(lg, 'true');
+        }
+        @include media-breakpoint-down(lg){
+            @include calc-container-placement(md, 'false');
+        }
+        @include media-breakpoint-down(md){
+            height: calc(100% - 100px);
+        }
+        &--video{
+            video{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+    }
+    &__content{
+        background-color: white;
+        position: relative;
+        padding: 75px 0 50px 0;
+        padding-right: 25px;
+        @include media-breakpoint-down(xxl){
+            padding: 50px 0 25px 0;
+            .display-1{
+               @include font-size(38px);
+            }
+        }
+        @include media-breakpoint-down(md){
+            padding: 50px 0 25px 0;
+        }
+        @include media-breakpoint-down(sm){
+            padding: 30px 0 15px 0;
+        }
+        &:before{
+            content:'';
+            position: absolute;
+            right: 0;
+            width: 50vw;
+            top: 0;
+            height: 100%;
+            background-color: white;
+            z-index: -1;
+            @include media-breakpoint-down(xl){
+                width: 100vw;
+            }
+        }
+    }
+    .container{
+        position: relative;
+        z-index: 3;
+    }
+}
+.project-slider{
+    width: 100vw;
+    right: 0;
+    &__slide{
+        @include calc-gridsize(xxxl, 2);
+        margin-right: 30px;
+        @include media-breakpoint-down(xxxl){
+            @include calc-gridsize(xxl, 2);
+        }
+        @include media-breakpoint-down(xxl){
+            @include calc-gridsize(xl, 2);
+        }
+        @include media-breakpoint-down(xl){
+            @include calc-gridsize(lg, 2);
+        }
+    }
+}
+
+.home-about{
+    &__media{
+        content:'';
+        position: relative;
+        height: 100%;
+        width: 100%;
+        @include media-breakpoint-down(lg){
+            height: 350px;
+        }
+        @include media-breakpoint-down(md){
+            height: 300px;
+        }
+        @include media-breakpoint-down(sm){
+            height: 275px;
+        }
+        &:before{
+            content:'';
+            position: absolute; 
+            top: 0;
+            left: 0;
+            background-image: url(../images/shape.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 50px;
+            width: 50px;
+            z-index: 3;
+            @include media-breakpoint-down(sm){
+                height: 30px;
+                width: 30px;
+                left: -5px;
+                top: -5px;
+
+            }
+            @media screen and (max-width: 425px) {
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+    &__image{
+        content:'';
+        position: absolute;
+        height: calc(100% - 50px);
+        width: calc(100% - 25px);
+        top: 50%;
+        right:0;
+        transform: translateY(-50%);
+        background-color: $gray-200;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include media-breakpoint-down(sm){
+            width: calc(100% - 10px);
+            height: calc(100% - 15px);
+        }
+    }
+}
+
+.home-service{
+    // background-color: $primary;
+    position: relative;
+    padding: 100px 0;
+    @include media-breakpoint-down(sm){
+        padding: 50px 0;
+    }
+    &:after{
+        position: absolute;
+        // right: 0;
+        top: 0;
+        height: 100%;
+        content:'';
+        background-color: $primary;
+        left:0;
+        z-index: 2;
+        @include calc-container-placement(xxxl, 'true');
+        @include media-breakpoint-down(xxxl){
+            @include calc-container-placement(xxl, 'true');
+        }
+        @include media-breakpoint-down(xxl){
+            @include calc-container-placement(xl, 'true');
+        }
+        @include media-breakpoint-down(xl){
+            @include calc-container-placement(lg, 'true');
+        }
+        @include media-breakpoint-down(lg){
+            @include calc-container-placement(md, 'false');
+        }
+    }
+    >.container{
+        position: relative;
+        z-index: 3;
+    }
+    &__media{
+        content:'';
+        position: relative;
+        height: 100%;
+        width: 50vw;
+    }
+    &__image{
+        content:'';
+        position: absolute; 
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $gray-300;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    &__list{
+        padding: 0;
+        margin: 0;
+        li{
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            padding: 15px 0;
+            line-height: 35px;
+            margin: 5px 0;
+            transition: all .5s ease;
+            &:hover{
+                border-bottom: 1px solid rgba(255,255,255,1);
+                a{
+                    &:after{
+                        transform: translateX(-10px);
+                        opacity:1;
+                    }
+                }
+            }
+            a{
+                color:white;
+                text-decoration: none;
+                width: 100%;
+                display: block;
+                overflow-x: hidden;
+                transition: all .3s ease;
+                &:after{
+                    content:'\f178';
+                    font-family: 'Font Awesome 5 Pro';
+                    font-weight: 300;
+                    float: right;
+                    transform: translatex(50px);
+                    transition: all .5s ease;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

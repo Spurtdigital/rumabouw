@@ -1,0 +1,113 @@
+.footer{
+    margin: 10px;
+    background-color: $gray-100;
+    padding: 150px 0 25px 0;
+    @include media-breakpoint-down(xl){
+        padding: 100px 0 25px 0;
+    }
+    &__logo{
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../images/rumabouw.svg);
+        width: 200px;
+        height: 85px;
+        content:'';
+        display: block;
+        @include media-breakpoint-down(lg){
+            width: 190px;
+        }
+        @include media-breakpoint-down(md){
+            width: 150px;
+            height: 65px;
+        }
+    }
+    &__menu{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        &--two{
+            columns: 2;
+            @include media-breakpoint-down(sm){
+                columns: 1;
+            }
+        }
+        li{
+            line-height: 35px;
+        }
+    }
+    &__bottommenu{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li{
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+        } 
+    }
+    &__img{
+        content:'';
+        height: 65px;
+        width: 125px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    &__times{
+        dt,dd{
+            float:left;
+            font-weight: normal;
+        }
+        dt{
+            width: 130px;
+        }
+        dd{
+            width: calc(100% - 130px);
+            text-align: right;
+        }
+    }
+    &__privacy{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        li{
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+        }
+    }
+    &__social{
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li{
+                a{
+                    transition: color .3s ease;
+                    &:hover{
+                        color: $red;
+                    }
+                }
+            }
+            span{
+                display: none;
+            }
+        }
+    }
+    .spurt-logo{
+        display: block;
+        float: right;
+        @include media-breakpoint-down(md){
+            float: left;
+        }
+        @include media-breakpoint-down(sm){
+            margin: 20px auto 0 auto;
+            text-align: center;
+            display: block;
+        }
+        svg{
+            width: 75px;
+        }
+    }
+}

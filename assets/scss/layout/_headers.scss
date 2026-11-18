@@ -1,0 +1,58 @@
+.single-header{
+    padding: 500px 0 100px 0;
+    background-color: $primary;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: relative;
+    @include media-breakpoint-down(xl){
+        padding: 400px 0 100px 0;
+    }
+    @include media-breakpoint-down(lg){
+        padding: 350px 0 75px 0;
+    }
+    @include media-breakpoint-down(md){
+        padding: 250px 0 50px 0;
+    }
+
+    &:before{
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 10px;
+        bottom: -10px;
+        background-color: $primary;
+        content:'';
+        width: calc(100% - ((100% - #{map_get($container-max-widths, 'xxxl')}) / 2) - #{$grid-gutter-width});
+        @include media-breakpoint-down(xxl){
+            width: calc(100% - ((100% - #{map_get($container-max-widths, 'xxl')}) / 2) - #{$grid-gutter-width});
+        }
+        @include media-breakpoint-down(xl){
+            width: calc(100% - ((100% - #{map_get($container-max-widths, 'xl')}) / 2) - #{$grid-gutter-width});   
+             }
+        @include media-breakpoint-down(lg){
+            width: calc(100% - ((100% - #{map_get($container-max-widths, 'lg')}) / 2) - #{$grid-gutter-width});
+               }
+        @include media-breakpoint-down(md){
+            width: calc(100% - ((100% - #{map_get($container-max-widths, 'md')}) / 2) - #{$grid-gutter-width});
+        }
+        @include media-breakpoint-down(sm){
+            width: calc(100% - ((100% - #{map_get($container-max-widths, 'sm')}) / 2) - #{$grid-gutter-width});
+        }
+    }
+    &:after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        mix-blend-mode: multiply;
+        opacity: .4;
+    }
+    >.container{
+        position: relative;
+        z-index: 4;
+    }
+}

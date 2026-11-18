@@ -1,0 +1,109 @@
+.block {
+    &-project{
+        position: relative;
+        padding-bottom: 75%;
+        display: block;
+        text-decoration: none;
+        @include media-breakpoint-down(lg){
+            padding-bottom: 67% ;
+        }
+        @include media-breakpoint-down(md){
+            padding-bottom: 50% ;
+        }
+        &:hover{
+            .block-project__image{
+                transform: scale(1.1);
+            }
+        }
+        &__media{
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            content:'';
+        }
+        &__image{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            content:'';
+            transition: all 2s ease;
+            &:after{
+                content:'';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+                mix-blend-mode: multiply;
+                opacity: .4;
+            }
+        }
+        &__content{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: calc(100% - 80px);
+            @include media-breakpoint-down(md){
+                bottom: 0;
+            }
+            .display-3{
+                @include dot-this(2, map_get($display-font-sizes, 3), $headings-line-height);
+            }
+        }
+    }
+    &-contact{
+        background-color: $primary;
+        padding: 30px;
+        color:white;
+        &__menu{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            color:white;
+            li{
+                line-height: 35px;
+                a{
+                    color:white;
+                }
+            }
+        }
+        &__times{
+            dt,dd{
+                float:left;
+                font-weight: normal;
+            }
+            dt{
+                width: 130px;
+            }
+            dd{
+                width: calc(100% - 130px);
+                text-align: right;
+            }
+        }
+    }
+
+}
+.b-block{
+    .block-project{
+        padding-bottom: 50% ;
+    }
+}
+.author{
+    &-block{
+        padding-top: 20px;
+        border-top: 1px solid rgba($primary, 10%);
+    }
+    &__img{
+        img{
+            border-radius: 50px;
+        }
+    }
+}

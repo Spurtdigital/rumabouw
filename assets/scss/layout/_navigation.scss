@@ -1,0 +1,173 @@
+.nav-bar{
+    position: fixed;
+    z-index: 9000;
+    padding: 25px 0;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(0,0,0,0.05);
+    background-color: white;
+    transition: padding .3s ease;
+    @include media-breakpoint-down(xl){
+        padding: 20px 0;
+    }
+    @include media-breakpoint-down(lg){
+        padding: 0;
+    }
+    &--fixed{
+        padding: 15px 0;
+        @include media-breakpoint-down(xl){
+            padding: 10px 0;
+        }
+        @include media-breakpoint-down(lg){
+            padding: 0;
+        }
+        .nav-bar__logo{
+            height: 75px;
+            @include media-breakpoint-down(xl){
+                height: 70px;
+            }
+        }
+    }
+    +section{
+        margin-top: 135px!important;
+        @include media-breakpoint-down(xl){
+            margin-top: 90px!important;
+        }
+    }
+    &__left{}
+    &__right{}
+    &__logo{
+        // background-color: $gray-100;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../images/rumabouw.svg);
+        width: 200px;
+        height: 85px;
+        content:'';
+        display: block;
+        transition: all .3s ease;
+        @include media-breakpoint-down(xl){
+            width: 190px;
+            height: 75px;
+        }
+        @include media-breakpoint-down(md){
+            width: 150px;
+            height: 65px;
+        }
+    }
+    &__menu{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        @include media-breakpoint-down(lg){
+            display: none;
+        }
+        li{
+            &:not(:last-child){
+                margin-right: 50px;
+                @include media-breakpoint-down(xl){
+                    margin-right: 35px;
+                }
+            }
+            &.current-menu-item{
+                position: relative;
+                &:after{
+                    position: absolute;
+                    background-image: url(../images/arrowdown.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    bottom: -12px;
+                    height: 12px;
+                    width: 12px;
+                    content:'';
+                    left:50%;
+                    transform: translateX(-50%);
+                    // background-color: #EB303A;
+                    @include media-breakpoint-down(lg){
+                        display: none;
+                    }
+                }
+            }
+            a{
+                text-decoration: none;
+                color:$primary;
+                font-size: 18px;
+                transition: all .2s ease;
+                &:hover{
+                    color: darken($primary,10%);
+                }
+            }
+        }
+    }
+    
+}
+
+.nav-toggle {
+    @include font-size(15);
+    color: $primary;
+    background-color: $primary;
+    height: 90px; 
+    padding: 0 35px;
+    display: none;
+    float: right;
+    line-height: 90px;
+    text-align: center;
+    @include media-breakpoint-down(lg) {
+        display: block;
+    }
+    &:hover {
+        color: white;
+        text-decoration: none;
+    }
+    &__icon {
+        display: inline-block;
+        height: 20px;
+        position: relative;
+        top: 6px;
+        width: 20px;
+        span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: $white;
+            position: absolute;
+            left: 0;
+            top: 9px;
+            transition: background-color 0s ease .3s;
+            &:before,
+            &:after {
+                content: '';
+                background-color: white;
+                height: 2px;
+                width: 20px;
+                position: absolute;
+                left: 0;
+            }
+            &:before {
+                top: -7px;
+                transition: top .2s ease .3s, transform .2s ease;
+            }
+            &:after {
+                bottom: -7px;
+                transition: bottom .2s ease .3s, transform .2s ease;
+            }
+        }
+    }
+    &.is-active {
+        .nav-toggle__icon {
+            span {
+                background-color: rgba($white, 0);
+                &:before {
+                    top: 0;
+                    transform: rotate(45deg);
+                    transition: top .2s ease, transform .2s ease .3s;
+                }
+                &:after {
+                    bottom: 0;
+                    transform: rotate(-45deg);
+                    transition: bottom .2s ease, transform .2s ease .3s;
+                }
+            }
+        }
+    }
+}
